@@ -1,4 +1,4 @@
-# Legal Assistant Platform - GenAI Powered
+# LEGALDOC AI ASSISTANT
 
 ## Overview
 
