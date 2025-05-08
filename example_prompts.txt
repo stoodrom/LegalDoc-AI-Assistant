@@ -1,0 +1,64 @@
+# Example Prompts for LegalDoc AI Assistant
+
+These example prompts are designed for the LegalDoc AI Assistant Streamlit application to generate legal documents (plaint, answer, affidavit). They are based on a hypothetical breach of contract case where Alice Johnson (plaintiff) sues Bob Smith (defendant) for failing to complete a kitchen renovation. Use these prompts in the Streamlit UI to test the application.
+
+## 1. Plaintiff-Advocate Conversation (for Plaint Generation)
+
+This conversation is used to generate the plaint, providing details about the plaintiff, defendant, facts, claim, and relief sought.
+
+```
+Plaintiff (Alice Johnson): I hired Bob Smith to renovate my kitchen for $10,000. We signed a contract on January 15, 2025, stating the work would be completed by March 15, 2025. I paid him the full amount upfront on January 20, 2025.
+
+Advocate: Did Bob complete the work as agreed?
+
+Plaintiff: No, he didn’t. By March 15, 2025, only 20% of the work was done, and it was substandard—crooked cabinets and cracked tiles. I sent him multiple emails asking for updates, but he stopped responding after February 2025.
+
+Advocate: What are you seeking from this lawsuit?
+
+Plaintiff: I want a refund of the $10,000 I paid, plus $2,000 for the cost of hiring another contractor to fix his shoddy work. I also want him to cover my legal fees.
+
+Advocate: What’s the legal basis for your claim?
+
+Plaintiff: He breached the contract by failing to complete the work on time and to the agreed standard. I trusted him to deliver, and he didn’t.
+```
+
+## 2. Defendant-Advocate Conversation (for Answer Generation)
+
+This conversation is used to generate the answer, detailing the defendant’s admissions, denials, and defenses.
+
+```
+Defendant (Bob Smith): I’m Bob Smith, and Alice Johnson is suing me over the kitchen renovation. I did receive her $10,000 payment on January 20, 2025, and we had a contract for the work.
+
+Advocate: Did you complete the renovation as agreed?
+
+Defendant: No, I couldn’t finish by March 15, 2025, but it wasn’t my fault. My main supplier went bankrupt in February 2025, delaying materials by six weeks. I told Alice about the delay, and she seemed okay with it at first.
+
+Advocate: What do you deny in her claims?
+
+Defendant: I deny that the work was substandard. The cabinets and tiles I installed were fine; Alice just changed her mind about the design. I also deny owing her $2,000 for another contractor—she hasn’t provided proof of those costs.
+
+Advocate: What’s your defense?
+
+Defendant: The delay was due to unforeseen circumstances beyond my control, which excuses performance under the contract’s force majeure clause. Plus, Alice’s failure to object to the delay earlier means she waived her right to strict timeliness.
+```
+
+## 3. Witness Statement (for Affidavit Generation)
+
+This statement is used to generate the affidavit, providing a firsthand account of relevant events.
+
+```
+My name is Carol White. On January 15, 2025, I was at Alice Johnson’s house when she and Bob Smith signed a contract for a kitchen renovation. I heard Bob promise to finish the work by March 15, 2025, for $10,000. I visited Alice’s house again on March 20, 2025, and saw that the kitchen was barely touched—only some cabinets were up, and they looked uneven. I also overheard Alice call Bob to complain, but he didn’t answer.
+```
+
+---
+
+### Instructions for Use
+1. Open the LegalDoc AI Assistant Streamlit app (`streamlit run app.py`).
+2. In the UI:
+   - Copy the "Plaintiff-Advocate Conversation" into the corresponding text area.
+   - Copy the "Defendant-Advocate Conversation" into its text area.
+   - Copy the "Witness Statement" into its text area.
+3. Click "Generate Documents" to create the plaint, answer, and affidavit.
+4. Use the "Suggest Arguments" and "Ask a Question" features to further explore the case.
+
+These prompts ensure the AI extracts all required fields (e.g., names, facts, claims, defenses) for accurate document generation.

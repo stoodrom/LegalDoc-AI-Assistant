@@ -1,0 +1,126 @@
+# API Key Setup for LegalDoc AI Assistant
+
+This guide explains how to generate and configure an **ngrok auth key** and an **OpenAI API key** for the LegalDoc AI Assistant project. These keys are required to run the Streamlit application, which uses OpenAI's API for document generation and ngrok (optional) to expose the local server to the internet.
+
+## 1. Generating an OpenAI API Key
+
+The OpenAI API key is used for text generation and embeddings in the LegalDoc AI Assistant. Follow these steps to obtain and configure it.
+
+### Step-by-Step Instructions
+1. **Create an OpenAI Account**:
+   - Visit https://platform.openai.com/signup.
+   - Sign up with your email address or log in if you already have an account.
+
+2. **Access the API Section**:
+   - Once logged in, go to the OpenAI Platform dashboard (https://platform.openai.com).
+   - Navigate to the "API" section or click "API Keys" in the sidebar.
+
+3. **Generate an API Key**:
+   - Click "Create new secret key" or a similar button.
+   - Give the key a name (e.g., "LegalDoc AI Assistant") for reference.
+   - Copy the generated key immediately (it will look like `sk-...`). You won’t be able to view it again, so store it securely.
+
+4. **Configure the API Key**:
+   - **For Google Colab** (recommended for this project):
+     - Open your Google Colab notebook.
+     - Go to the "Secrets" panel (lock icon in the left sidebar).
+     - Add a new secret with:
+       - Name: `OPENAI_API_KEY`
+       - Value: Paste your OpenAI API key.
+     - Save the secret. The app (`app.py`) retrieves the key using `userdata.get("OPENAI_API_KEY")`.
+   - **For Local Development**:
+     - Set the key as an environment variable:
+       - On macOS/Linux:
+         ```bash
+         export OPENAI_API_KEY='your-api-key'
+         ```
+       - On Windows:
+         ```bash
+         set OPENAI_API_KEY=your-api-key
+         ```
+     - Alternatively, create a `.env` file in the project directory with:
+       ```
+       OPENAI_API_KEY=your-api-key
+       ```
+       Then modify `app.py` to load the key using `python-dotenv` (requires installing `python-dotenv` via `pip`).
+
+5. **Verify the Key**:
+   - Run the Streamlit app (`streamlit run app.py`).
+   - If the key is set correctly, the app will initialize without errors. If you see an error like "Failed to initialize OpenAI API," double-check the key and its configuration.
+
+### Notes
+- Keep your API key secure and never share it publicly (e.g., in GitHub commits).
+- OpenAI may require a paid account or credits to use the API. Check your account’s billing section to ensure you have sufficient credits.
+- If you lose your key, generate a new one and update your configuration.
+
+## 2. Generating an ngrok Auth Key
+
+ngrok is optional but recommended for exposing the local Streamlit app (running on `http://localhost:8501`) to the internet for testing, sharing, or debugging. An ngrok auth key is required to use ngrok’s full features.
+
+### Step-by-Step Instructions
+1. **Create an ngrok Account**:
+   - Visit https://ngrok.com.
+   - Sign up with your email, Google, GitHub, or another supported method, or log in if you have an account.
+
+2. **Access the Dashboard**:
+   - After logging in, go to the ngrok dashboard (https://dashboard.ngrok.com).
+   - Navigate to the "Getting Started" or "Your Authtoken" section.
+
+3. **Generate an Auth Key**:
+   - In the "Your Authtoken" section, you’ll see a unique authtoken (e.g., `2aBcDeFgHiJkLmNoPqRsTuVwXyZ_...`).
+   - Copy the authtoken. If no token is visible, click "Generate" or "Reveal" to create one.
+
+4. **Install ngrok**:
+   - Download ngrok from https://ngrok.com/download for your operating system (Windows, macOS, Linux).
+   - Unzip the downloaded file to a convenient location (e.g., `~/ngrok` or `C:\ngrok`).
+   - Add ngrok to your system’s PATH (optional, for easier command-line access):
+     - On macOS/Linux:
+       ```bash
+       mv ngrok /usr/local/bin/
+       ```
+     - On Windows, add the ngrok directory to the PATH environment variable.
+
+5. **Configure the Auth Key**:
+   - Run the following command to add your authtoken to ngrok’s configuration:
+     ```bash
+     ngrok config add-authtoken your-ngrok-authtoken
+     ```
+     Replace `your-ngrok-authtoken` with the copied token.
+   - This creates or updates a configuration file (e.g., `~/.ngrok2/ngrok.yml` on macOS/Linux or `%USERPROFILE%\.ngrok2\ngrok.yml` on Windows).
+
+6. **Test ngrok**:
+   - Start the Streamlit app:
+     ```bash
+     streamlit run app.py
+     ```
+   - In a new terminal, expose the app:
+     ```bash
+     ngrok http 8501
+     ```
+   - ngrok will display a public URL (e.g., `https://random-id.ngrok.io`). Open this URL in a browser to access your Streamlit app.
+   - Use ngrok’s web interface (`http://localhost:4040`) to inspect traffic for debugging.
+
+### Notes
+- The free ngrok plan provides temporary URLs that change on restart. For persistent URLs, consider a paid plan.
+- Secure your authtoken and avoid sharing it publicly.
+- ngrok is for development and testing, not production. For production, deploy the app to a server (e.g., AWS, Heroku).
+
+## Troubleshooting
+- **OpenAI API Errors**:
+  - If you see "Invalid API key," verify the key in Colab Secrets or your environment.
+  - Ensure your OpenAI account has API access and sufficient credits.
+- **ngrok Errors**:
+  - If ngrok fails to connect, check your authtoken with `ngrok config check`.
+  - Ensure no other ngrok instances are running, as they may conflict.
+- **General**:
+  - Refer to the project’s logs (in the terminal) for detailed error messages.
+  - Check the OpenAI (https://platform.openai.com/docs) and ngrok (https://ngrok.com/docs) documentation for additional help.
+
+## Security Best Practices
+- Store keys in secure locations (e.g., Colab Secrets, environment variables, or encrypted files).
+- Avoid committing keys to GitHub. Use a `.gitignore` file to exclude `.env` or other sensitive files.
+- Rotate keys periodically or if you suspect a compromise.
+
+---
+
+For further assistance, refer to the project’s README.md or contact the repository owner.

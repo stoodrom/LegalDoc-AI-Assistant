@@ -1,0 +1,24 @@
+
+        IN THE DISTRICT COURT OF [APPROPRIATE JURISDICTION]
+        Alice Johnson, Plaintiff,
+        v.
+        Bob Smith, Defendant.
+        Case No: [To Be Assigned]
+
+        COMPLAINT
+        JURISDICTION AND VENUE
+        1. Jurisdiction: 28 U.S.C. § 1332.
+        2. Venue: Events occurred in this district.
+        PARTIES
+        3. Plaintiff: Alice Johnson.
+        4. Defendant: Bob Smith.
+        STATEMENT OF FACTS
+        5. Alice hired Bob to renovate her kitchen for $10,000. They signed a contract on January 15, 2025, with completion due by March 15, 2025. Alice paid the full amount upfront on January 20, 2025.
+        CAUSE OF ACTION
+        6. Alice seeks a refund of $10,000, $2,000 for hiring another contractor to fix the substandard work, and coverage of legal fees.
+        PRAYER FOR RELIEF
+        a. The legal basis for the claim is Bob's breach of contract by failing to complete the work on time and to the agreed standard.
+        b. Costs and fees.
+        Dated: April 12, 2025
+        [Advocate Name]
+        

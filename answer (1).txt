@@ -1,0 +1,18 @@
+
+        IN THE DISTRICT COURT OF [APPROPRIATE JURISDICTION]
+        [Plaintiff Name], Plaintiff,
+        v.
+        Bob Smith, Defendant.
+        Case No: [To Be Assigned]
+
+        ANSWER
+        1. Admits: {'received_payment': True}.
+        2. Denies: {'substandard_work': True, 'owing_money': True}.
+        AFFIRMATIVE DEFENSES
+        3. {'delay_unforeseen_circumstances': True, 'waiver_of_right': True}.
+        PRAYER FOR RELIEF
+        a. Dismissal.
+        b. Costs and fees.
+        Dated: April 12, 2025
+        [Advocate Name]
+        
